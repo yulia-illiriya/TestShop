@@ -7,6 +7,7 @@
 - PostgreSQL
 - Redis
 - Celery
+- Postman
 
 ## Эффективность запросов
 
