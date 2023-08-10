@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+     DATABASE_URL=$DATABASE_URL
+
+  redis:
+    image: redis:latest
+
+  myapp:
+    build: ./myapp
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - postgres
+      - redis
